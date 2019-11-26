@@ -16,5 +16,10 @@ namespace WFAPPTwitter
         {
             InitializeComponent();
         }
+
+        private void SetImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
