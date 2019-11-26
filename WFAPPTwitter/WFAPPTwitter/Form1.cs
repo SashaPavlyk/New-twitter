@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFAPPTwitter.Models;
 
 namespace WFAPPTwitter
 {
     public partial class Form1 : Form
     {
+        User currentuser = new User(); 
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +26,10 @@ namespace WFAPPTwitter
 
         private void buttonAddMessage_Click(object sender, EventArgs e)
         {
-            listBoxMessages.Items.Add(textBoxMessage.Text);
+            Messages msg = new Messages();
+            msg.Name = currentuser.Name;
+            msg.Msg = textBoxMessage.Text;
+            listBoxMessages.Items.Add(msg);
         }
 
     }
