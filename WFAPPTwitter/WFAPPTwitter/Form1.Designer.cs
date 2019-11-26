@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SetImage = new System.Windows.Forms.Button();
+            this.listBoxMessages = new System.Windows.Forms.ListBox();
+            this.textBoxMessage = new System.Windows.Forms.TextBox();
+            this.buttonAddMessage = new System.Windows.Forms.Button();
+            this.labelMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +41,6 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 193);
@@ -54,15 +56,6 @@
             this.SetImage.Text = "Profile Image";
             this.SetImage.UseVisualStyleBackColor = true;
             this.SetImage.Click += new System.EventHandler(this.SetImage_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.listBoxMessages = new System.Windows.Forms.ListBox();
-            this.textBoxMessage = new System.Windows.Forms.TextBox();
-            this.buttonAddMessage = new System.Windows.Forms.Button();
-            this.labelMessage = new System.Windows.Forms.Label();
-            this.SuspendLayout();
             // 
             // listBoxMessages
             // 
@@ -111,9 +104,9 @@
             this.Controls.Add(this.listBoxMessages);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.MouseLeave += new System.EventHandler(this.f);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
