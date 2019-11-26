@@ -42,10 +42,25 @@ namespace WFAPPTwitter
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (FileStream fs = new FileStream("User.bin", FileMode.Create))
+            using (FileStream fs = new FileStream("Message.bin", FileMode.Create))
             {
-                bf.Serialize(fs, list);
+                foreach (var item in listBoxMessages.Items)
+                {
+                    bf.Serialize(fs, (Messages)item);
+                }
+                
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+                using (FileStream fileStream = new FileStream("Message.bin", FileMode.Open))
+                {
+                    foreach (var item in listBoxMessages.Items)
+                    {
+                        bf.Deserialize(fileStream);
+                    }
+                }
         }
     }
 }
