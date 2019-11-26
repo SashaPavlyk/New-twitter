@@ -42,25 +42,32 @@ namespace WFAPPTwitter
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (FileStream fs = new FileStream("Message.bin", FileMode.Create))
+
+
+
+            foreach (var item in listBoxMessages.Items)
             {
-                foreach (var item in listBoxMessages.Items)
-                {
-                    bf.Serialize(fs, (Messages)item);
+                Messages msg = (Messages)item;
+                File.AppendAllText("Message.txt", $"{msg.ToString()}\r\n");
                 }
                 
-            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                using (FileStream fileStream = new FileStream("Message.bin", FileMode.Open))
-                {
-                    foreach (var item in listBoxMessages.Items)
-                    {
-                        bf.Deserialize(fileStream);
-                    }
-                }
+            string []messages =File.ReadAllLines("Message.txt");
+            Messages mess = new Messages();
+            foreach (var item in messages)
+            {
+               var str=item.Split(':');
+                
+                mess.Name = str[0];
+                mess.Msg = str[1];
+                
+            listBoxMessages.Items.Add(mess);
+            }
+
         }
     }
 }
