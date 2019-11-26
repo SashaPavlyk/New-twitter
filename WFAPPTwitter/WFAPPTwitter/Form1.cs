@@ -21,5 +21,11 @@ namespace WFAPPTwitter
         {
 
         }
+
+        private void buttonAddMessage_Click(object sender, EventArgs e)
+        {
+            listBoxMessages.Items.Add(textBoxMessage.Text);
+        }
+
     }
 }

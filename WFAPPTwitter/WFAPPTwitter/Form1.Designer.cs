@@ -58,14 +58,64 @@
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.listBoxMessages = new System.Windows.Forms.ListBox();
+            this.textBoxMessage = new System.Windows.Forms.TextBox();
+            this.buttonAddMessage = new System.Windows.Forms.Button();
+            this.labelMessage = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // listBoxMessages
+            // 
+            this.listBoxMessages.FormattingEnabled = true;
+            this.listBoxMessages.Location = new System.Drawing.Point(493, 13);
+            this.listBoxMessages.Name = "listBoxMessages";
+            this.listBoxMessages.Size = new System.Drawing.Size(295, 420);
+            this.listBoxMessages.TabIndex = 0;
+            // 
+            // textBoxMessage
+            // 
+            this.textBoxMessage.Location = new System.Drawing.Point(13, 346);
+            this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.Size = new System.Drawing.Size(430, 20);
+            this.textBoxMessage.TabIndex = 1;
+            // 
+            // buttonAddMessage
+            // 
+            this.buttonAddMessage.Location = new System.Drawing.Point(313, 373);
+            this.buttonAddMessage.Name = "buttonAddMessage";
+            this.buttonAddMessage.Size = new System.Drawing.Size(130, 23);
+            this.buttonAddMessage.TabIndex = 2;
+            this.buttonAddMessage.Text = "Add";
+            this.buttonAddMessage.UseVisualStyleBackColor = true;
+            this.buttonAddMessage.Click += new System.EventHandler(this.buttonAddMessage_Click);
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(13, 327);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(99, 13);
+            this.labelMessage.TabIndex = 3;
+            this.labelMessage.Text = "Type new message";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SetImage);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelMessage);
+            this.Controls.Add(this.buttonAddMessage);
+            this.Controls.Add(this.textBoxMessage);
+            this.Controls.Add(this.listBoxMessages);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,6 +123,11 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button SetImage;
+
+        private System.Windows.Forms.ListBox listBoxMessages;
+        private System.Windows.Forms.TextBox textBoxMessage;
+        private System.Windows.Forms.Button buttonAddMessage;
+        private System.Windows.Forms.Label labelMessage;
     }
 }
 
